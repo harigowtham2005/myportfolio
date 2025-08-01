@@ -1,103 +1,86 @@
-body{
-    background-color: rgb(58, 57, 57);
-}
-#name{
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  header {
+    background-color: #333;
     color: white;
-    background-color: gray;
-    text-align:center;
-    padding: 15px;
-}
-#links{
-    color: white;
-    background-color: white;
-    padding-top: 5px;
-    padding-bottom: 1px;
+    padding: 20px 0;
     text-align: center;
-    background-attachment: fixed;
-
-}
-#myimage{
-    align-items: end;
-}
-#abt{
-    color: rgb(249, 247, 247);
-    padding: 15px;
-}
-#tech,#nontech,#pro{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
-    font-weight: 100;
-    font-display: auto;
-    color: rgb(249, 247, 247);
-    padding: 15px;
-
-}
-#ts{
-    padding: 15px;
-    position: sticky;
-    left:500px;
-}
-span.badge.rounded-pill.bg-dark{
-    font-size: 18px;
-    align-items: center;
-    margin-left: 15px;
-    margin-right: 150x;
-    padding: 15px;
-    position:relative;
-    overflow: auto;
-}
-a:link{
-    color: blue;
-}
-a:visited{
-    color: green;
-}
-a:hover{
+  }
+  
+  header nav ul {
+    list-style: none;
+    padding: 10px 0;
+  }
+  
+  header nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  header nav ul li a {
+    color: white;
     text-decoration: none;
-    color:yellow;
-    font-size: 15px;
-    background-color: black;
-}
-a:active{
-    color: black;
-}
-div.card{
-    display: inline-block;
-    margin:15px;
-    border:1px solid black;
-    width:fit-content;
-    height: fit-content;
-    overflow: auto;
-}
-.card-img-top{
-    height: 150px;
-    width: 240px;
-}
-div.card-body{
-    width:200px;
-    height: 213.6px;
-    padding-right: 5px;
-}
-#foot{
-    background-color: aquamarine;
-}
-#projectssss{
-    height: 600px;
-    overflow: auto;
-    margin-left: 20%;
-}
-.skills{
-    position: relative;
-    left: 200px;
-}
-.card{
+    font-weight: bold;
+  }
+  
+  section {
+    padding: 60px 20px;
+    max-width: 800px;
     margin: auto;
-}
-span.badge.rounded-pill.bg-dark:hover{
-    font-size: 30px;
-    color: rgb(161, 195, 230);
-    background-color: white;
-}
-.card:hover{
-    width:25px;
-}
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #444;
+  }
+  
+  .project {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  form button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background: #45a049;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+  }
+  
