@@ -1,138 +1,560 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="https://cdn.vectorstock.com/i/preview-1x/86/35/nu-monogram-shield-shape-style-vector-39608635.jpg" type="image/x-icon">
+
+  </head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Appala Nagendra Varma - Full-stack Developer & Machine Learning Enthusiast.">
+  <meta name="keywords" content="Portfolio, Developer, Full-stack, Machine Learning, Appala Nagendra Varma">
+  <title>ARETI HARI GOWTHAM | Portfolio</title>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <!-- AOS animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Font Awesome and Devicon -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+    a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+    header {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+    }
+    nav a {
+      color: white;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    nav a:hover {
+      background: #00bcd4;
+      color: #000;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+    }
+    .skills-grid li {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      padding: 12px 20px;
+      border-radius: 15px;
+      font-size: 1em;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+    .skills-grid li i {
+      font-size: 1.2em;
+    }
+    .skills-grid li:hover {
+      background-color: #00bcd4;
+      color: #000;
+      transform: scale(1.05);
+    }
+    .project-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .project-card {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 450px;
+      width: 100%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+    .project-card h3 {
+      margin-top: 0;
+    }
+    form {
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      max-width: 600px;
+      margin: auto;
+    }
+    form label {
+      margin-bottom: 15px;
+      font-size: 1.1em;
+      color: #f0f0f0;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #444;
+      background: #2b2b2b;
+      color: white;
+      font-size: 1em;
+    }
+    button {
+      background: #00bcd4;
+      border: none;
+      color: black;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #1de9b6;
+    }
+    footer {
+      background-color: #1f1f1f;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    @media (max-width: 768px) {
+      .project-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!--HEADER-->
-    <div id="name">
-        <header>
-            <h1>ARETI HARI GOWTHAM</h1>
-            <h3>Computer Science student</h3>
-        </header>
+
+  <header data-aos="fade-down">
+    <h1>Areti Hari Gowtham</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about" style="background-color: #0f0f0f; padding: 40px 20px; box-shadow: 0 0 15px rgba(0,0,0,0.05);" data-aos="fade-up">
+    <h2 style="text-align: left; margin-left: 10px;">About Me</h2>
+  
+    <!-- Flexbox: Picture Left | Text Right -->
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; margin-top: 30px;">
+  
+      <!-- Picture -->
+      <div style="flex: 1; min-width: 250px; max-width: 300px; display: flex; justify-content: center;">
+        <div style="position: relative; width: 220px; height: 220px; border-radius: 50%; overflow: hidden;
+          border: 5px solid #2b2b2b; 
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);">
+          <img src="C:\Users\HARI GOWTHAM\OneDrive\Pictures\Sky\1000131125-01.jpeg" alt="Areti Hari Gowtham"
+               style="width:100%; height:100%; object-fit: cover; filter: brightness(0.9);">
+        </div>
+      </div>
+  
+      <!-- About Text -->
+      <div style="flex: 2; min-width: 280px; color: #ddd; width: 100%; max-width: 100%; text-align: justify;">
+        <p>Hello! I'm <strong>Areti Hari Gowtham</strong>, a highly motivated and detail-oriented software developer 
+           with a strong passion for building innovative and impactful web applications.</p>
+        <p>I am a Computer Science and Engineering professional with expertise in 
+           <strong>Python, JavaScript, React, Node.js, SQL, MongoDB, HTML, CSS, and Machine Learning</strong>. 
+           I am passionate about solving problems through clean, efficient code and staying updated with the latest industry trends.</p>
+        <p>Beyond technical skills, I bring strong teamwork, <strong>communication</strong>, <strong>time management</strong>, 
+           <strong>adaptability</strong>, and <strong>leadership</strong> abilities to every project. I strive to deliver 
+           innovative solutions and continuously improve my craft.</p>
     </div>
-
-    <!--NAVIGATION LINKS-->
-    <div id="links">
-        <nav>
-            <ol>
-                <a href="#abt">About</a>
-                <a href="#ts">Technical Skills</a>
-                <a href="#nts">Non Technical Skills</a>
-                <a href="#pro">Projects</a>
-                <a href="#ct">Contact</a>
-            </ol>
-        </nav>
-    </div>
-
-    <!--ABOUT ME-->
-    <section>
-        <div id="abt">
-            <h2 style="text-align: center;"><u>About Me</u></h2>
-            <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 25px;">Motivated and detail-oriented student with a strong academic record and a passion for learning. Pursuing Computer Science Engineering with a focus on emerging technologies.</p>
-        </div>
-    </section>
-
-
-
-    <!--TECHNICAL SKILLS-->
-    <section>
-        <div id="ts">
-            <div id="tech">
-                <h2 style="text-align: center;"><u>Technical Skills</u></h2>
-            </div>
-            <section>
-                <div class="skills">
-                    <span class="badge rounded-pill bg-dark">Python</span>
-                    <span class="badge rounded-pill bg-dark">Html</span>
-                    <span class="badge rounded-pill bg-dark">Css</span>
-                    <span class="badge rounded-pill bg-dark">JavaScript</span>
-                    <span class="badge rounded-pill bg-dark">Machine Learning</span>
-                    <span class="badge rounded-pill bg-dark">C</span>
-                    <span class="badge rounded-pill bg-dark">React</span>
-                    <span class="badge rounded-pill bg-dark">Node</span>
-                    <span class="badge rounded-pill bg-dark">MongoDB</span> 
-                </div>
-            </section>
-        </div>
-    </section>
-
-
-
-
-    <!--NON TECHNICAL SKILLS-->
-    <section>
-        <div id="nts">
-             <div id="ntskills"></div>
-                <div id="tech">
-                    <h2 style="text-align: center;"><u>Non-Technical Skills</u></h2>
-                </div>
-                <section>
-                    <div class="skills">
-                        <span class="badge rounded-pill bg-dark">Hard Working</span>
-                        <span class="badge rounded-pill bg-dark">Creative Thinking</span>
-                        <span class="badge rounded-pill bg-dark">Problem Solving</span>
-                        <span class="badge rounded-pill bg-dark">Communication</span>
-                        <span class="badge rounded-pill bg-dark">Team Collabration</span>
-                        <span class="badge rounded-pill bg-dark">Quick Learning</span>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </section>
     
+  
+    </div>
+  </section>
+  
+  
+  <style>
+    /* CSS Keyframe animation for smoke effect (removed from image) */
+    @keyframes smokeEffect {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.1;
+      }
+      50% {
+        transform: translateY(-20px) scale(1.05);
+        opacity: 0.2;
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.1;
+      }
+    }
+  
+    /* Adding moving background effect to image container (removed) */
+    @keyframes moveBackground {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+  
+  
+  
+
+  <section id="skills">
+    <h2 data-aos="fade-up">Technical Skills</h2>
+    <ul class="skills-grid" data-aos="fade-right">
+      <li><i class="devicon-python-plain colored"></i>Python</li>
+      <li><i class="devicon-javascript-plain colored"></i>JavaScript</li>
+      <li><i class="devicon-react-original colored"></i>React</li>
+      <li><i class="devicon-nodejs-plain colored"></i>Node.js</li>
+      <li><i class="devicon-mysql-plain colored"></i>SQL</li>
+      <li><i class="devicon-mongodb-plain colored"></i>MongoDB</li>
+      <li><i class="devicon-html5-plain colored"></i>HTML</li>
+      <li><i class="devicon-css3-plain colored"></i>CSS</li>
+      <li><i class="fas fa-robot"></i>Machine Learning</li>
+    </ul>
+
+    <h2 style="margin-top: 50px;" data-aos="fade-up">Non-Technical Skills</h2>
+    <ul class="skills-grid" data-aos="fade-left">
+      <li><i class="fas fa-users" style="color: #1E88E5;"></i> Team Collaboration</li>
+      <li><i class="fas fa-lightbulb" style="color: #FFEB3B;"></i> Problem Solving</li>
+      <li><i class="fas fa-clock" style="color: #FF7043;"></i> Time Management</li>
+      <li><i class="fas fa-comments" style="color: #4CAF50;"></i> Communication</li>
+      <li><i class="fas fa-brain" style="color: #9C27B0;"></i> Adaptability</li>
+      <li><i class="fas fa-user-tie" style="color: #FF5722;"></i> Leadership</li>
+    </ul>
+    
+  </section>
+
+  <!-- AOS CSS and JS Inclusion -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<!-- AOS CSS and JS Inclusion -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<!-- AOS CSS and JS Inclusion -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<!-- AOS CSS and JS Inclusion -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<section id="projects" data-aos="fade-left"> 
+  <h2>Projects</h2>
+  <div class="project-container">
+    
+    <div class="project-card" style="animation: popAnimation 0.6s ease-in-out;">
+      <h3>Disease Detect System</h3>
+      <p>Based on the symptoms,medications will be recommended.</p>
+      <a href="https://iridescent-sunburst-905b1e.netlify.app/" target="_blank">View Project</a>
+    </div>
+
+    <div class="project-card" style="animation: popAnimation 0.6s ease-in-out;">
+      <h3>Stop Clock</h3>
+      <p>Stop Clock include current time along with Dark mode.</p>
+      <a href="https://harigowtham2005.github.io/stopclock/" target="_blank">View Project</a>
+    </div>
+    
+    <!-- New Calculator Project -->
+    <div class="project-card" style="animation: popAnimation 0.6s ease-in-out;">
+      <h3>SIMPLE CALCULATOR</h3>
+      <p>A basic web calculator built with HTML, CSS, and JavaScript that performs simple operations like addition, subtraction, multiplication, and division. Designed for quick and efficient calculations with a clean user interface.</p>
+      <a href="https://harigowtham2005.github.io/Hari-simple-caluclator/" target="_blank">View Project</a>
+    </div>
+
+
+    <div class="project-card" style="animation: popAnimation 0.6s ease-in-out;">
+      <h3>SMART STREET LIGHT SYSTEM USING IOT</h3>
+      <p>Sensor-based lighting that adjusts based on traffic flow.</p>
+      <ul>
+        <li>Energy-efficient and responsive system</li>
+        <li>Connectivity and Smart City Integration</li>
+      </ul>
+    </div>
+
+    <div class="project-card" style="animation: popAnimation 0.6s ease-in-out;">
+      <h3>JOB BOARD</h3>
+      <p>A job board where employers can post job openings, and job seekers can search and apply for jobs.</p>
+      <ul>
+        <li>Job Listings for browsing available jobs.</li>
+        <li>Search & Filters to narrow down job options.</li>
+      </ul>
+      <p><strong>Status:</strong> Development phase ongoing</p>
+    </div>
+
+    <div class="project-card" style="animation: popAnimation 0.6s ease-in-out;">
+      <h3>INTERACTIVE ONLINE QUIZ PLATFORM</h3>
+      <p>A platform where users can create and take quizzes to test their knowledge.</p>
+      <ul>
+        <li>Quiz creation for custom quizzes.</li>
+        <li>Take pre-made quizzes to test knowledge.</li>
+        <li>Leaderboard and user authentication.</li>
+      </ul>
+      <p><strong>Status:</strong> Development phase ongoing</p>
+    </div>
+  </div>
+</section>
+
+
+<style>
+  /* Simple pop animation */
+  @keyframes popAnimation {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Default background color set to black */
+  .project-card {
+    opacity: 1;
+    animation: fadeInAOS 1s forwards;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    background-color: black; /* Set the default background color to black */
+    color: white; /* Set text color to white for better contrast on black background */
+    padding: 15px;
+    border-radius: 8px; /* Optional: Add border radius for smooth edges */
+  }
+
+  /* Hover effect for project cards */
+  .project-card:hover {
+    transform: translateY(-10px); /* Moves the card up */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Adds a shadow for hover effect */
+    background-color: #182b2e; /* Change background color to #00bcd4 on hover */
+    color: white; /* Ensure text stays white for good contrast */
+  }
+
+  /* Fade-in effect for AOS */
+  @keyframes fadeInAOS {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  // Initialize AOS library
+  AOS.init({
+    duration: 1000, // 1 second
+    easing: 'ease-in-out',
+    once: true // Ensures the animation only runs once
+  });
+</script>
 
 
 
-    <!--PROJECTS-->
-    <section>
-        <div id="pro">
-            <h2 style="text-align: center;"><u>Projects</u></h2>
-        </div>
-        <div id="projectssss">
-            <div class="card" style="width: 15rem;">
-                <img src="C:\Users\HARI GOWTHAM\Downloads\download (3).png" class="card-img-top" alt="calculator">
-                <div class="card-body">
-                    <h5 class="card-title">Calculator</h5>
-                    <p class="card-text">A basic web calculator built with HTML, CSS, and JavaScript.</p><br>
-                    <a href="https://harigowtham2005.github.io/Hari-simple-caluclator/" class="btn btn-primary">Visit Project</a>
-                </div>
-            </div>
+<section id="contact" data-aos="zoom-in">
+  <h2 style="opacity: 0; animation: fadeIn 1s forwards, slideUp 1s ease-out forwards 0.3s;">Contact Me</h2>
+  
+  <form id="contact-form" 
+        style="background: #1e1e1e; padding: 30px; border-radius: 12px; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.6); max-width: 600px; margin: auto; animation: scaleUp 1s ease-out, slideUp 1s ease-out forwards;">
+    
+    <label for="user_name" 
+           style="color: #f0f0f0; font-size: 1.1em; margin-bottom: 5px; display: block; opacity: 0; animation: fadeIn 1s forwards 0.3s, slideIn 0.5s ease-out forwards 0.3s;">Your Name</label>
+    <input type="text" name="user_name" id="user_name" required 
+           style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #444; background: #2b2b2b; color: white; font-size: 1em; margin-top: 5px; opacity: 0; animation: fadeIn 1s forwards 0.5s, bounceIn 0.5s ease-out forwards;">
+    
+    <label for="user_email" 
+           style="color: #f0f0f0; font-size: 1.1em; margin-bottom: 5px; display: block; opacity: 0; animation: fadeIn 1s forwards 0.6s, slideIn 0.5s ease-out forwards 0.6s;">Your Email</label>
+    <input type="email" name="user_email" id="user_email" required 
+           style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #444; background: #2b2b2b; color: white; font-size: 1em; margin-top: 5px; opacity: 0; animation: fadeIn 1s forwards 0.8s, bounceIn 0.5s ease-out forwards;">
+    
+    <label for="message" 
+           style="color: #f0f0f0; font-size: 1.1em; margin-bottom: 5px; display: block; opacity: 0; animation: fadeIn 1s forwards 1s, slideIn 0.5s ease-out forwards 1s;">Your Message</label>
+    <textarea name="message" id="message" rows="5" required 
+              style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #444; background: #2b2b2b; color: white; font-size: 1em; margin-top: 5px; opacity: 0; animation: fadeIn 1s forwards 1.2s, bounceIn 0.5s ease-out forwards 1.2s;"></textarea>
+    
+    <button type="submit" 
+            style="background: #00bcd4; border: none; color: black; padding: 12px 24px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; opacity: 0; animation: fadeIn 1s forwards 1.4s, growOnHover 0.3s ease-out forwards 1.4s;">
+      Send
+    </button>
+
+    <div id="formMessage" style="margin-top: 10px;"></div>
+  </form>
+</section>
+
+<style>
+  /* Fade In */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Scale Up */
+  @keyframes scaleUp {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  /* Slide Up */
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Bounce In */
+  @keyframes bounceIn {
+    0% { transform: translateY(30px); opacity: 0; }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Slide In */
+  @keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+
+  /* Button Grow on Hover */
+  @keyframes growOnHover {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+  }
+
+  /* Add hover glow effect for button */
+  button:hover {
+    background: #00e5ff;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
+  }
+
+  /* Focus effects on inputs and textarea */
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: #00bcd4;
+    box-shadow: 0 0 8px #00bcd4;
+    background: #333;
+    transition: all 0.3s ease;
+  }
+</style>
 
 
+<footer style="background: #1e1e1e; padding: 20px 0; color: #f0f0f0; text-align: center; font-size: 1.1em; margin-top: 50px; animation: fadeIn 2s ease-out;">
+  <p style="margin-bottom: 10px; font-weight: bold;">Thank you for visiting my website!</p>
+  <p style="margin-top: 5px;">Feel free to reach out via the <a href="#contact" style="color: #00bcd4; text-decoration: none; font-weight: bold;">Contact</a> section if you have any questions or would like to connect.</p>
 
-            <div class="card" style="width: 15rem;">
-                <img src="C:\Users\HARI GOWTHAM\Downloads\download (4).png" class="card-img-top" alt="stop clock">
-                <div class="card-body">
-                    <h5 class="card-title">Stop Clock</h5>
-                    <p class="card-text">Stop Clock include current time along with Dark mode.</p>
-                    <br>
-                    <a href="https://harigowtham2005.github.io/stopclock/" class="btn btn-primary">Visit Project</a>
-                </div>
-            </div>
+  <div style="margin-top: 20px;">
+    <a href="https://www.linkedin.com/in/appala-nagendra-varma-25bbb9318" target="_blank" style="color: #00bcd4; text-decoration: none; font-size: 1.5em; margin: 0 15px; transition: transform 0.3s ease-in-out;">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    
+    <a href="https://github.com/Nagendra14319" target="_blank" style="color: #00bcd4; text-decoration: none; font-size: 1.5em; margin: 0 15px; transition: transform 0.3s ease-in-out;">
+      <i class="fab fa-github"></i>
+    </a>
+    
+    <a href="https://wa.me/6304559436" target="_blank" style="color: #00bcd4; text-decoration: none; font-size: 1.5em; margin: 0 15px; transition: transform 0.3s ease-in-out;">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <a href="mailto:harigowthamareti109@gmail.com" target="_blank" style="color: #00bcd4; text-decoration: none; font-size: 1.5em; margin: 0 15px; transition: transform 0.3s ease-in-out;">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+  
+  
+  
 
-            <div class="card" style="width: 15rem;">
-                <img src="C:\Users\HARI GOWTHAM\Downloads\download (5).png" class="card-img-top" alt="drs" height="100px">
-                <div class="card-body">
-                    <h5 class="card-title">Disease Detection System</h5>
-                    <p class="card-text">Based on the symptoms,mediciene will recommended.</p>
-                    <a href="https://iridescent-sunburst-905b1e.netlify.app/" class="btn btn-primary">Visit Project</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <p style="margin-top: 30px; font-size: 0.9em; color: #aaa;">
+    Designed and developed by Appala Nagendra Varma.
+  </p>
+  
+</footer>
 
-    <footer id="foot">
-        <section>
-            <div>
+<style>
+  /* Keyframe for fade-in animation for the footer */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
-            </div>
-        </section>
-    </footer>
+  /* Hover effect for social media icons */
+  footer a:hover {
+    transform: scale(1.2);
+  }
+</style>
+
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    (function() {
+      emailjs.init("R_BNuzUXl9UrFcERd");
+    })();
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      emailjs.sendForm("service_w0w6lxt", "template_386olqe", this)
+        .then(() => {
+          document.getElementById("formMessage").textContent = "Message sent successfully!";
+          form.reset();
+        }, () => {
+          document.getElementById("formMessage").textContent = "Error sending message.";
+        });
+    });
+  </script>
+
 </body>
 </html>
